@@ -17,12 +17,8 @@ class Backpack
     # Ensure appropriate clothing is added to backpack
     pack_according_to_weather(weather)
 
-
     # Ensure gym shoes are added to backpack if it's a gym day
-    if day_of_week == 'monday' || day_of_week == 'thursday'
-      #add gym shoes to items
-      @items << 'gym shoes'
-    end
+    pack_gym_shoes?(day_of_week)
 
     # Bring a packed lunch on all weekdays
     if day_of_week != 'saturday' && day_of_week != 'sunday'
@@ -34,6 +30,13 @@ class Backpack
   def pack_pants_and_shirt
     @items << 'pants'
     @items << 'shirt'
+  end
+
+  def pack_gym_shoes?(day_of_week)
+    if day_of_week == 'monday' || day_of_week == 'thursday'
+      #add gym shoes to items
+      @items << 'gym shoes'
+    end
   end
 
   # packs jacket or umbrella, depending on the weather
