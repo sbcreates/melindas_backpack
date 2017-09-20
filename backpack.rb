@@ -30,7 +30,7 @@ class Backpack
   end
 
   def pack_gym_shoes?(day_of_week)
-    if day_of_week == 'monday' || day_of_week == 'thursday'
+    if day_of_week == ('monday' || 'thursday')
       #add gym shoes to items
       @items << 'gym shoes'
     end
