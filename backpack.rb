@@ -16,16 +16,13 @@ class Backpack
 
     # Ensure appropriate clothing is added to backpack
     if weather == 'rainy'
-      @items << 'pants'
-      @items << 'shirt'
+      pack_pants_and_shirt
       @items << 'umbrella'
     elsif weather == 'cold'
-      @items << 'pants'
-      @items << 'shirt'
+      pack_pants_and_shirt
       @items << 'jacket'
     else
-      @items << 'pants'
-      @items << 'shirt'
+      pack_pants_and_shirt
     end
 
     # Ensure gym shoes are added to backpack if it's a gym day
@@ -40,6 +37,10 @@ class Backpack
     end
   end
 
+  def pack_pants_and_shirt
+    @items << 'pants'
+    @items << 'shirt'
+  end
 
 
   # Prints a summary packing list for Melinda's backpack
