@@ -26,8 +26,7 @@ class Backpack
 
   # packs pants and shirt in backpack
   def pack_pants_and_shirt
-    @items << 'pants'
-    @items << 'shirt'
+    @items << 'pants' << 'shirt'
   end
 
   def pack_gym_shoes?(day_of_week)
