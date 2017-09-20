@@ -15,15 +15,8 @@ class Backpack
     day_of_week = @attributes[:day_of_week]
 
     # Ensure appropriate clothing is added to backpack
-    if weather == 'rainy'
-      pack_pants_and_shirt
-      @items << 'umbrella'
-    elsif weather == 'cold'
-      pack_pants_and_shirt
-      @items << 'jacket'
-    else
-      pack_pants_and_shirt
-    end
+    pack_according_to_weather(weather)
+
 
     # Ensure gym shoes are added to backpack if it's a gym day
     if day_of_week == 'monday' || day_of_week == 'thursday'
@@ -37,9 +30,20 @@ class Backpack
     end
   end
 
+  # packs pants and shirt in backpack
   def pack_pants_and_shirt
     @items << 'pants'
     @items << 'shirt'
+  end
+
+  # packs jacket or umbrella, depending on the weather
+  def pack_according_to_weather(weather)
+      pack_pants_and_shirt
+    if weather == 'rainy'
+      @items << 'umbrella'
+    elsif weather == 'cold'
+      @items << 'jacket'
+    end
   end
 
 
