@@ -21,9 +21,7 @@ class Backpack
     pack_gym_shoes?(day_of_week)
 
     # Bring a packed lunch on all weekdays
-    if day_of_week != 'saturday' && day_of_week != 'sunday'
-      @items << 'packed lunch'
-    end
+    pack_lunch_if_weekday(day_of_week)
   end
 
   # packs pants and shirt in backpack
@@ -36,6 +34,12 @@ class Backpack
     if day_of_week == 'monday' || day_of_week == 'thursday'
       #add gym shoes to items
       @items << 'gym shoes'
+    end
+  end
+
+  def pack_lunch_if_weekday(day_of_week)
+    if day_of_week != 'saturday' && day_of_week != 'sunday'
+      @items << 'packed lunch'
     end
   end
 
